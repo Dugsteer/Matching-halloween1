@@ -1,0 +1,111 @@
+.main {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    align-self: start;
+    justify-self: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.overlay {
+    position: relative;
+  margin-top: 5rem;
+    width: 800px;
+    height: 500px;
+    transform: all 5s ease;
+    box-shadow: 3px 3px 3px rgba(0,0,0, 0.6);
+
+    // border-radius: 8px;
+    // background: rgba(0,0,0, .9);
+    // z-index:5;
+}
+
+.overlay .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    transform: all 5s ease;
+    
+}
+
+.overlay:hover .after {
+    display: block;
+    background: rgba(0,0,0, .6);
+    transform: all 5s ease;
+}
+
+.image-art {
+    height: 100%;
+    width: 100%;
+}
+.image-text {
+            position: absolute;
+            font-size: 12rem;
+            font-family: 'Creepster';
+            text-align: center;
+            width: 80%;
+            height: 30%;
+            color:$color-halloween-orange;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            transition: all .2s ease;
+            z-index: 2000;
+            
+    }
+        
+    .overlay:hover .image-text {
+        display: block;
+    }
+
+
+@media only screen and (max-width:$bp-large) {
+    .overlay {
+        width: 700px;
+        height: 450px;
+    }
+
+    .image-text {
+        width: 300;
+        height: 150;
+        font-size: 8rem;
+    }
+}
+@media only screen and (max-width:$bp-medium) {
+    .overlay {
+        width: 600px;
+        height: 400px;
+    }
+
+    .image-text {
+        width: 300;
+        height: 150;
+        font-size: 8rem;
+    }
+}
+@media only screen and (max-width:$bp-small) {
+    .overlay {
+        width: 400px;
+        height: 250px;
+    }
+
+    .image-text {
+        width: 300;
+        height: 150;
+        font-size: 6rem;
+    }
+}
+
+@media only screen and (max-width: $bp-smallest) {
+    .overlay {
+        width: 350px;
+        height: 270px;
+    }
+
+  }
