@@ -66,6 +66,84 @@ h4 {
   line-height: 1.2;
   margin-bottom: 0.7rem; }
 
+.card {
+  width: 60%;
+  height: 82%;
+  background-color: #939875;
+  position: relative;
+  border: none;
+  margin: 2% 3%; }
+
+.memory-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease; }
+  .memory-card:focus {
+    outline-style: none; }
+
+.memory-card:active {
+  transform: scale(0.97) translateY(3px);
+  transition: transform 0.2s ease-in; }
+
+.memory-card.flip {
+  transform: rotateY(180deg); }
+
+img.image {
+  object-fit: contain;
+  height: 80%;
+  width: 80%; }
+
+.imgBg {
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 120%;
+  margin-top: .5rem; }
+
+imgBg.smaller {
+  width: 400px; }
+
+.front-face,
+.back-face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.6vw;
+  text-align: center;
+  position: absolute;
+  background: #939875;
+  transform: rotateX(0deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.5); }
+
+.front-face {
+  transform: rotateX(0deg);
+  transform: rotateY(180deg);
+  background-color: #e8e4c9;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 2rem;
+  font-weight: normal;
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif; }
+  @media only screen and (max-width: 62.5em) {
+    .front-face {
+      font-size: 1.4rem; } }
+  @media only screen and (max-width: 50em) {
+    .front-face {
+      font-size: 1.2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .front-face {
+      font-size: 1rem; } }
+
 .buttons {
   display: flex;
   align-items: center;
@@ -129,7 +207,7 @@ h4 {
 .loader-div {
   background-color: #594f73;
   position: absolute;
-  height: 100vh;
+  height: 220vh;
   width: 1200px;
   margin: auto;
   top: 0;
@@ -189,6 +267,9 @@ h4 {
     margin: 0 5%; } }
 
 .sidebar {
+  grid-row: 1/5;
+  grid-column: 1/2;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -395,10 +476,10 @@ h4 {
     fill: #F75F1C; }
 
 .introduction {
-  grid-row: 2/3;
+  grid-row: 1/2;
   grid-column: 2/3;
   width: 700px;
-  height: 400px;
+  height: 550px;
   background-color: #e8e4c9;
   justify-self: center;
   align-self: center;
@@ -410,35 +491,39 @@ h4 {
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1); }
   @media only screen and (max-width: 62.5em) {
     .introduction {
+      width: 700px;
+      height: 550px; } }
+  @media only screen and (max-width: 50em) {
+    .introduction {
       width: 600px;
-      height: 400px; } }
+      height: 550px; } }
   @media only screen and (max-width: 37.5em) {
     .introduction {
       justify-content: center;
-      width: 400px;
-      height: 300px; } }
+      width: 450px;
+      height: 420px;
+      grid-row: 2/3;
+      text-align: center; } }
   @media only screen and (max-width: 30em) {
     .introduction {
       justify-content: center;
       width: 350px;
-      height: 270px; } }
+      height: 450px; } }
   .introduction__img {
-    width: 200px;
-    height: 150px;
+    width: 180px;
+    height: 450px;
     background-color: #F75F1C;
     padding: 20px;
     align-self: center;
-    justify-self: flex-end;
-    margin-top: 4rem;
+    justify-self: center;
+    margin-top: 2rem;
     margin-bottom: 2rem;
-    border-radius: 3px;
+    border-radius: 8px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4); }
     @media only screen and (max-width: 62.5em) {
       .introduction__img {
-        width: 160px;
-        height: 120px;
-        margin-right: 2rem;
-        padding: 10px; } }
+        width: 180px;
+        height: 450px; } }
     @media only screen and (max-width: 37.5em) {
       .introduction__img {
         display: none; } }
@@ -457,12 +542,31 @@ h4 {
       .introduction__text p {
         font-size: 1.6rem;
         line-height: 2.2rem; } }
+  .introduction__choices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .introduction__choices p {
+      font-weight: bolder; }
+  .introduction__set {
+    background-color: #F75F1C;
+    height: 30px;
+    width: 50px;
+    border-radius: 8px;
+    margin: 1rem 0;
+    color: #e8e4c9;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4); }
+    .introduction__set:hover {
+      transform: scale(1.1); }
+    .introduction__set:active {
+      transform: translateY(2px);
+      box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1); }
 
 .links {
   margin-top: 3rem; }
-
-.card {
-  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4); }
 
 .wrapper {
   width: 1200px;
@@ -470,7 +574,6 @@ h4 {
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
   display: grid;
   align-items: center;
-  justify-content: center;
   background-color: #594f73;
   margin: 0 auto;
   grid-template-rows: auto auto auto;
@@ -485,91 +588,91 @@ h4 {
     .wrapper {
       grid-template-columns: 0 1fr; } }
 
-.main {
-  grid-row: 1/2;
+.game-container {
+  display: grid;
   grid-column: 2/3;
-  align-self: start;
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
-
-.overlay {
-  position: relative;
-  margin-top: 5rem;
+  grid-row: 2/3;
+  grid-template-columns: 6vw repeat(4, 1fr);
+  grid-template-rows: 6vw repeat(4, 1fr);
+  grid-gap: 1rem;
+  background-color: #939875;
+  color: #33363b;
+  margin: 5vw 0;
   width: 800px;
-  height: 500px;
-  transform: all 5s ease;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6); }
+  height: 800px;
+  padding-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  font-family: "Anton", sans-serif;
+  font-size: 2.4rem;
+  justify-items: center;
+  justify-self: center;
+  align-items: center;
+  align-self: start; }
+  @media only screen and (max-width: 62.5em) {
+    .game-container {
+      width: 700px;
+      height: 700px; } }
+  @media only screen and (max-width: 50em) {
+    .game-container {
+      width: 600px;
+      height: 600px;
+      font-size: 2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .game-container {
+      grid-row: 1/2;
+      width: 450px;
+      height: 450px;
+      font-size: 1.8rem; } }
+  @media only screen and (max-width: 30em) {
+    .game-container {
+      width: 350px;
+      height: 350px; } }
 
-.overlay .after {
-  position: absolute;
-  top: 0;
-  left: 0;
+.letter1 {
+  grid-column: 2/3; }
+
+.letter2 {
+  grid-column: 3/4; }
+
+.letter3 {
+  grid-column: 4/5; }
+
+.letter4 {
+  grid-column: 5/6; }
+
+.number1 {
+  grid-column: 1/2;
+  grid-row: 2/3; }
+
+.number2 {
+  grid-column: 1/2;
+  grid-row: 3/4; }
+
+.number3 {
+  grid-column: 1/2;
+  grid-row: 4/5; }
+
+.number4 {
+  grid-column: 1/2;
+  grid-row: 5/6; }
+
+.game-tiles {
+  grid-row: 2/6;
+  grid-column: 2/6;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  background: transparent;
   width: 100%;
   height: 100%;
-  display: none;
-  transform: all 5s ease; }
+  flex-wrap: wrap;
+  perspective: 1000px;
+  justify-items: center;
+  align-items: center; }
 
-.overlay:hover .after {
-  display: block;
-  background: rgba(0, 0, 0, 0.6);
-  transform: all 5s ease; }
-
-.image-art {
-  height: 100%;
-  width: 100%; }
-
-.image-text {
-  position: absolute;
-  font-size: 12rem;
-  font-family: 'Creepster';
-  text-align: center;
-  width: 80%;
-  height: 30%;
-  color: #F75F1C;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  transition: all .2s ease;
-  z-index: 2000; }
-
-.overlay:hover .image-text {
-  display: block; }
-
-@media only screen and (max-width: 62.5em) {
-  .overlay {
-    width: 700px;
-    height: 450px; }
-  .image-text {
-    width: 300;
-    height: 150;
-    font-size: 8rem; } }
-
-@media only screen and (max-width: 50em) {
-  .overlay {
-    width: 600px;
-    height: 400px; }
-  .image-text {
-    width: 300;
-    height: 150;
-    font-size: 8rem; } }
-
-@media only screen and (max-width: 37.5em) {
-  .overlay {
-    width: 400px;
-    height: 250px; }
-  .image-text {
-    width: 300;
-    height: 150;
-    font-size: 6rem; } }
-
-@media only screen and (max-width: 30em) {
-  .overlay {
-    width: 350px;
-    height: 270px; } }
+.showTiles {
+  display: grid; }
 
 .links {
   grid-row: 3/4;

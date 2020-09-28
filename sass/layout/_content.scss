@@ -1,111 +1,100 @@
-.main {
-    grid-row: 1/2;
+.game-container {
+    display: grid;
     grid-column: 2/3;
-    align-self: start;
-    justify-self: center;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
-
-.overlay {
-    position: relative;
-  margin-top: 5rem;
+    grid-row: 2/3;
+    grid-template-columns: 6vw repeat(4, 1fr);
+    grid-template-rows: 6vw repeat(4, 1fr);
+    grid-gap: 1rem;
+    background-color: $color-halloween-green;
+    color:$color-slate;
+    margin: 5vw 0;
     width: 800px;
-    height: 500px;
-    transform: all 5s ease;
-    box-shadow: 3px 3px 3px rgba(0,0,0, 0.6);
+    height: 800px;
+    padding-bottom: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    font-family: "Anton", sans-serif;
+    font-size: 2.4rem;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    align-self: start;
 
-    // border-radius: 8px;
-    // background: rgba(0,0,0, .9);
-    // z-index:5;
-}
-
-.overlay .after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    transform: all 5s ease;
-    
-}
-
-.overlay:hover .after {
-    display: block;
-    background: rgba(0,0,0, .6);
-    transform: all 5s ease;
-}
-
-.image-art {
-    height: 100%;
-    width: 100%;
-}
-.image-text {
-            position: absolute;
-            font-size: 12rem;
-            font-family: 'Creepster';
-            text-align: center;
-            width: 80%;
-            height: 30%;
-            color:$color-halloween-orange;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            display: none;
-            transition: all .2s ease;
-            z-index: 2000;
-            
+    @media only screen and (max-width: $bp-large){
+      width: 700px;
+      height: 700px;
     }
-        
-    .overlay:hover .image-text {
-        display: block;
+    @media only screen and (max-width: $bp-medium){
+      width: 600px;
+      height: 600px;
+      font-size: 2rem;
     }
-
-
-@media only screen and (max-width:$bp-large) {
-    .overlay {
-        width: 700px;
-        height: 450px;
+    @media only screen and (max-width: $bp-small){
+      grid-row: 1/2;
+      width: 450px;
+      height: 450px;
+      font-size: 1.8rem;
     }
-
-    .image-text {
-        width: 300;
-        height: 150;
-        font-size: 8rem;
+    @media only screen and (max-width: $bp-smallest){
+      width: 350px;
+      height: 350px;
     }
-}
-@media only screen and (max-width:$bp-medium) {
-    .overlay {
-        width: 600px;
-        height: 400px;
-    }
-
-    .image-text {
-        width: 300;
-        height: 150;
-        font-size: 8rem;
-    }
-}
-@media only screen and (max-width:$bp-small) {
-    .overlay {
-        width: 400px;
-        height: 250px;
-    }
-
-    .image-text {
-        width: 300;
-        height: 150;
-        font-size: 6rem;
-    }
-}
-
-@media only screen and (max-width: $bp-smallest) {
-    .overlay {
-        width: 350px;
-        height: 270px;
-    }
-
   }
+  
+  .letter1 {
+    grid-column: 2/3;
+  }
+  
+  .letter2 {
+    grid-column: 3/4;
+  }
+  
+  .letter3 {
+    grid-column: 4/5;
+  }
+  
+  .letter4 {
+    grid-column: 5/6;
+  }
+  
+  .number1 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  
+  .number2 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  
+  .number3 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  
+  .number4 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  
+  .game-tiles {
+    grid-row: 2/6;
+    grid-column: 2/6;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .showTiles {
+    display: grid;
+  }
+  
+  
+

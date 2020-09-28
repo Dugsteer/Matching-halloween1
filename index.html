@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A fun, free  online Halloween flashcards for learning English">
+    <meta name="description" content="A fun, free Halloween game of memory matching for learning English online or in the classroom">
     <meta name="keywords" content="Halloween online flashcards">
-    <title>Halloween Hovercards — online flashcards for learning English vocabulary</title>
+    <title>Halloween Card Memory Matching</title>
     <link rel="icon" type="image/png"
     href="favicon.png";
   />
@@ -14,9 +14,9 @@
 </head>
 <body>
 
-  <div class="loader-div" id="loaderDiv">
+ <div class="loader-div" id="loaderDiv">
     <div class="loader-container">
-      <img class="ghost" src="img/loader-ghost.svg" alt="">
+      <img class="ghost" src="img/loader-ghost.svg" alt=""> 
     
     
     
@@ -36,7 +36,7 @@
           </svg>    </a>
         <h3 class="nav-bar__title">Esl-Ology.Com</h3>
         <div class="nav-bar__title-page">
-          <span class="nav-bar__title-page-main" id="pageTitle">HALLOWEEN HOVERCARDS</span>
+          <span class="nav-bar__title-page-main" id="pageTitle">HALLOWEEN MEMORY MATCH</span>
       </div>
       <div class="nav-bar__links">
       <a href="index.html" class="nav-bar__link link3">Home</a>
@@ -56,35 +56,53 @@
   </div>
 
         <div class="introduction">
-          <div class="introduction__img">
-            <img src="img/halloween-castle.png" alt="decorative">
+          <div class="introduction__img" id="ghostly" onclick="ghostify();">
+            <img src="img/ghosties.png" alt="decorative">
           </div>
           <div class="introduction__text">
-            <h1>Halloween Online Flashcards</h1>
+            <h1>Troublesome Tombstones
+            </h1>
             <p>
-              Choose from a set of Halloween words such as bat, witch, cat and monster, or secretly enter your own word in this seasonally scary game that helps to practise spelling and the pronunciation of letters of the alphabet. Enter the letters one by one onto the big tombstone, but if you get a letter wrong, one of the little tombstones turns into a ghost and flies away. When there are none left — you lose!
+              Match the Halloween items hiding behind each of the troublesome tombstones with its name for some spooky fun. There are three sets to choose from!
             </p>
+             <div class="introduction__choices">
+    <button class="introduction__set" id="set1">Set 1</button>
+    <p>bat, bone, broom, werewolf, candy, cat, cauldron, clown</p>
+
+    <button class="introduction__set" id="set2">Set 2</button>
+    <p>coffin, witch, fangs, Frank, ghost, grave, hat, monster </p>
+
+    <button class="introduction__set" id="set3">Set 3</button>
+    <p>zombie, mummy, pirate, pumpkin, skeleton, skull, spider, vampire</p>
+
+  </div>
+  </div
+
           </div>
         </div>
 
       
-        <div class="main">
-          <div id="overlay" class="overlay">
-            <img id="image-art" class="image-art" src="img/bat.jpg" alt="">
-          <div class="after"></div>
-              <p id="image-text" class="image-text">Firetruck</p>
-        </div>
+        <div class="game-container"> 
+    <div class="empty"></div>
+    <div class="h4 letter1">A</div>
+    <div class="h4 letter2">B</div>
+    <div class="h4 letter3">C</div>
+    <div class="h4 letter4">D</div>
+    <div class="empty"></div>
+    <div class="h4 number1">I</div>
+    <div class="h4 number2">II</div>
+    <div class="h4 number3">III</div>
+    <div class="h4 number4">IV</div>
 
-        <div class="buttons">
-          <div class="buttons__icon" onclick="goBackwards()">
-            <img class="buttons__icon-img arrow1" src="img/right-arrow-halloween.png" alt="">
-          </div>
-            <p class="count" id="count">2/20</p>
-          <div class="buttons__icon" onclick="goForwards()">
-            <img class="buttons__icon-img arrow2" src="img/right-arrow-halloween.png" alt="">
-          </div>
-        </div>
+    <div class="game-tiles game-tiles1 showTiles" id="game-tiles"></div>
+
+
+
+
   </div>
+
+  
+
 
       <div class="links">
         <h2 class="links__text">
@@ -126,28 +144,7 @@
         }
       }
     preload(
-      "img/bat.jpg",
-  "img/halloween-castle.png",
-  "img/black-cat.jpg",
-  "img/broomstick.jpg",
-  "img/candy.jpg",
-  "img/cauldron.jpg",
-  "img/clown.jpg",
-  "img/fancy-dress.jpg",
-  "img/frankenstein.jpg",
-  "img/ghost.jpg",
-  "img/monster.jpg",
-  "img/moon.jpg",
-  "img/mummy.jpg",
-  "img/pumpkin.jpg",
-  "img/right-arrow-halloween.png",
-  "img/skeleton.jpg",
-  "img/skull.jpg",
-  "img/vampire.jpg",
-  "img/werewolf.jpg",
-  "img/witch.jpg",
-  "img/wizard.jpg",
-  "img/zombie.jpg"
+ 
  
     )
       //--><!]]>
