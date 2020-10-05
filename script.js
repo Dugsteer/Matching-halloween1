@@ -3,6 +3,19 @@ const sidey = document.getElementById("conto");
 const blue = window.matchMedia("(max-width: 800px)");
 const ghostly = document.getElementById("ghostly");
 
+
+//Show ABOUT info
+const extra = document.getElementById('info');
+
+function show(){
+    info.classList.toggle('xxc');
+};
+
+function unshow(){
+    info.classList.remove('xxc');
+};
+
+
 function ghostify(){
   ghostly.innerHTML === '<img src="img/ghosties.png" alt="decorative">' ? 
   ghostly.innerHTML = '<img src="img/ghosties2.png" alt="decorative">' : ghostly.innerHTML = '<img src="img/ghosties.png" alt="decorative">';
