@@ -16,7 +16,7 @@
   },
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/styles.css -w",
-    "devserver": "live-server --browser=FIREFOX",
+    "devserver": "live-server",
     "start": "npm-run-all --parallel devserver watch:sass",
     "autoprefixer": "postcss css/styles.css --use autoprefixer -d build/",
     "compile": "babel --presets es2015,stage-0 -d build/ script.js",

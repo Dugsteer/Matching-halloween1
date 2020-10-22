@@ -2,36 +2,33 @@
   grid-row: 1/2;
   grid-column: 2/3;
   width: 700px;
-  height: 550px;
+  height: auto;
   background-color: $color-halloween-white;
   justify-self: center;
   align-self: center;
-  margin: 4rem 0;
-  padding: 1rem 4rem;
+  margin: 2rem 0;
+  padding: 3rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   box-shadow: $box-shadow-small;
 
   @media only screen and (max-width: $bp-large) {
     width: 700px;
-    height: 550px;
   }
   @media only screen and (max-width: $bp-medium) {
     width: 600px;
-    height: 550px;
   }
   @media only screen and (max-width: $bp-small) {
+    flex-direction: column-reverse;
     justify-content: center;
     width: 450px;
-    height: 420px;
     grid-row: 2/3;
     text-align: center;
   }
   @media only screen and (max-width: $bp-smallest) {
     justify-content: center;
     width: 350px;
-    height: 450px;
   }
 
   &__img {
@@ -43,7 +40,6 @@
     padding: 20px;
     align-self: center;
     justify-self: center;
-    margin-top: 2rem;
     margin-bottom: 2rem;
     border-radius: 8px;
     box-shadow: $box-shadow-large;
@@ -53,11 +49,12 @@
       height: 450px;
   
     }
- 
-
-    @media only screen and (max-width: $bp-small) {
-      display: none;
+    @media only screen and (max-width: $bp-large) {
+      margin-top: 2rem;
+  
     }
+
+
 
     & img {
       width: 100%;
@@ -67,9 +64,11 @@
 
   &__text {
     width: 60%;
+    margin-left: 1rem;
 
     @media only screen and (max-width: $bp-small) {
       width: 90%;
+      margin: 0;
     }
   }
 
